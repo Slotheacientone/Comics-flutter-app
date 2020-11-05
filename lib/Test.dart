@@ -1,5 +1,5 @@
+import 'package:comics_flutter_app/widget.dart';
 import 'package:flutter/material.dart';
-import 'package:myapp/widget.dart';
 
 class Test extends StatelessWidget {
   List<Widget> banner = [

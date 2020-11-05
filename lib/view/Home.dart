@@ -1,5 +1,5 @@
+import 'package:comics_flutter_app/view/HomeState.dart';
 import 'package:flutter/material.dart';
-import 'package:myapp/view/HomeState.dart';
 
 class Home extends StatefulWidget {
   @override

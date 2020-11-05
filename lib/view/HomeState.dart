@@ -1,17 +1,17 @@
+import 'package:comics_flutter_app/view/CatagoryWidget.dart';
+import 'package:comics_flutter_app/view/DiscoveryWidget.dart';
+import 'package:comics_flutter_app/view/Home.dart';
+import 'package:comics_flutter_app/view/HomeWidget.dart';
+import 'package:comics_flutter_app/view/LibaryWidget.dart';
 import 'package:flutter/material.dart';
-import 'package:myapp/Test.dart';
-import 'package:myapp/view/DiscoveryWidget.dart';
-import 'package:myapp/view/Home.dart';
-import 'package:myapp/view/HomeWidget.dart';
-import 'package:myapp/view/LibaryWidget.dart';
-import 'package:myapp/view/ProfileWidget.dart';
+
+import 'ProfileWidget.dart';
 
 class HomeState extends State<Home> {
   int _currentIndex = 0;
   List<Widget> _children = [
     HomeWidget(),
-    // CatagoryWidget(),
-    Test(),
+    CatagoryWidget(),
     DiscoveryWidget(),
     LibaryWidget(),
     ProfileWidget(),
