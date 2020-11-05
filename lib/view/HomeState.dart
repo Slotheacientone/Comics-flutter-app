@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/CatagoryWidget.dart';
-import 'package:myapp/DiscoveryWidget.dart';
-import 'package:myapp/Home.dart';
-import 'package:myapp/HomeWidget.dart';
-import 'package:myapp/LibaryWidget.dart';
-import 'package:myapp/ProfileWidget.dart';
+import 'package:myapp/Test.dart';
+import 'package:myapp/view/DiscoveryWidget.dart';
+import 'package:myapp/view/Home.dart';
+import 'package:myapp/view/HomeWidget.dart';
+import 'package:myapp/view/LibaryWidget.dart';
+import 'package:myapp/view/ProfileWidget.dart';
 
 class HomeState extends State<Home> {
-  int _currentIndex =0;
+  int _currentIndex = 0;
   List<Widget> _children = [
     HomeWidget(),
-    CatagoryWidget(),
+    // CatagoryWidget(),
+    Test(),
     DiscoveryWidget(),
     LibaryWidget(),
     ProfileWidget(),
   ];
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -54,6 +53,7 @@ class HomeState extends State<Home> {
       ),
     );
   }
+
   void onTabTapped(int index) {
     setState(() {
       _currentIndex = index;
