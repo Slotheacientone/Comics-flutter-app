@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
-class CatagoryWidget extends StatelessWidget {
+class CatagoryPage extends StatefulWidget {
+  @override
+  _CatagoryPageState createState() => _CatagoryPageState();
+}
+
+class _CatagoryPageState extends State<CatagoryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
