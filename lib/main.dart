@@ -1,13 +1,25 @@
+import 'dart:convert';
+
+import 'package:comics_flutter_app/utils/data.dart';
 import 'package:comics_flutter_app/view/discovery_page.dart';
 import 'package:comics_flutter_app/view/home_page.dart';
 import 'package:comics_flutter_app/view/library_page.dart';
 import 'package:comics_flutter_app/view/profile_page.dart';
-import 'package:comics_flutter_app/view/catagory_page.dart';
+import 'package:comics_flutter_app/view/category_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  initData();
   runApp(new App());
+
 }
+void initData() async {
+  Data data = Data();
+  await data.readData();
+
+}
+
 class App extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -15,11 +27,11 @@ class App extends StatefulWidget {
   }
 }
 
-class _AppState extends State<App>{
+class _AppState extends State<App> {
   int _currentIndex = 0;
   List<Widget> _children = [
     HomePage(),
-    CatagoryPage(),
+    CategoryPage(),
     DiscoveryPage(),
     LibraryPage(),
     ProfilePage(),
@@ -35,6 +47,8 @@ class _AppState extends State<App>{
           children: _children,
         ),
         bottomNavigationBar: BottomNavigationBar(
+          selectedItemColor: Colors.blue,
+          unselectedItemColor: Colors.black.withOpacity(0.55),
           onTap: onTabTapped,
           currentIndex: _currentIndex,
           type: BottomNavigationBarType.fixed,

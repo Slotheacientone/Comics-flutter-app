@@ -1,3 +1,4 @@
+import 'package:comics_flutter_app/utils/data.dart';
 import 'package:comics_flutter_app/widget.dart';
 import 'package:flutter/material.dart';
 
