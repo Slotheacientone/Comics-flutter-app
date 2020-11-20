@@ -98,6 +98,23 @@ class _ComicCardState extends State<ComicCard> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    List<Chapter> chapters = [
+      new Chapter(name: 'chapter 1'),
+      new Chapter(name: 'chapter 2'),
+      new Chapter(name: 'chapter 3'),
+      new Chapter(name: 'chapter 4'),
+      new Chapter(name: 'chapter 5'),
+      new Chapter(name: 'chapter 6'),
+      new Chapter(name: 'chapter 7'),
+      new Chapter(name: 'chapter 8'),
+      new Chapter(name: 'chapter 9'),
+      new Chapter(name: 'chapter 10'),
+      new Chapter(name: 'chapter 11'),
+      new Chapter(name: 'chapter 12'),
+      new Chapter(name: 'chapter 13'),
+      new Chapter(name: 'chapter 14'),
+      new Chapter(name: 'chapter 15'),
+    ];
     Comic comic = Comic(
       title: 'Con Gái Bảo Bối Của Ma Vương',
       thumbnail:
@@ -105,6 +122,7 @@ class _ComicCardState extends State<ComicCard> {
       category: 'Action - Comedy - Manhua - Mystery - Truyện Màu - Xuyên Không',
       contents:
           'Từ khi ở nhà cô, tôi bị bắt nạt rất nhiều. Muốn kết bạn nhưng vì béo mập nên bị bạn bè cô lập… sao đời người lại khó khăn như thế? Tôi chỉ muốn sống thật tốt! Sau một vụ tai nạn xe, lần nữa mở mắt ra, gì cơ? Đây là ma giới? Cha tôi là vua ma giới?! Người cha ma vương này quả thực cuồng cưng chiều con gái, ngay cả những tiểu ca ca cũng yêu chiều bảo bảo tôi đây tận trời, hạnh phúc quá!!',
+      chapters: chapters,
     );
     comics.add(comic);
     comics.add(comic);

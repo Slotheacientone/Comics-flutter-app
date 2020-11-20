@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:background_app_bar/background_app_bar.dart';
 
 class ComicDetail extends StatefulWidget {
-  Comic comic;
+  final Comic comic;
   ComicDetail({this.comic});
 
   @override
@@ -29,14 +29,6 @@ class _ComicDetailState extends State<ComicDetail> {
                 floating: false,
                 snap: false,
                 pinned: true,
-                /* title: Container(
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text('abc'),
-                    ],
-                  ),
-                ), */
                 title: Text(
                   comic.title,
                   style: TextStyle(fontSize: 15),
@@ -56,8 +48,6 @@ class _ComicDetailState extends State<ComicDetail> {
                   ),
                 ),
                 flexibleSpace: new BackgroundFlexibleSpaceBar(
-                  //title: new Text(comic.title),
-                  centerTitle: false,
                   titlePadding: const EdgeInsets.only(left: 20.0, bottom: 20.0),
                   background: new ClipRect(
                     child: new Container(
@@ -73,58 +63,69 @@ class _ComicDetailState extends State<ComicDetail> {
                       decoration: new BoxDecoration(
                         image: DecorationImage(
                             fit: BoxFit.cover,
-                            image: NetworkImage(
-                                'https://st.truyenchon.com/data/comics/69/con-gai-bao-boi-cua-ma-vuong.jpg')),
+                            image: NetworkImage(comic.thumbnail)),
                       ),
                     ),
                   ),
                 ),
-                /* flexibleSpace: Stack(
-                  children: <Widget>[
-                    Positioned.fill(
-                      child: BackdropFilter(
-                        filter: ImageFilter.blur(
-                          sigmaX: 600,
-                          sigmaY: 600,
-                        ),
-                        child: Container(
-                          child: Image.network(
-                            "https://st.truyenchon.com/data/comics/69/con-gai-bao-boi-cua-ma-vuong.jpg",
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ), */
-                /*   flexibleSpace: FlexibleSpaceBar(
-                  background: Image.network(
-                    "https://st.truyenchon.com/data/comics/69/con-gai-bao-boi-cua-ma-vuong.jpg",
-                    fit: BoxFit.cover,
-                  ),
-                  title: Text(
-                    'Abc',
-                    style: TextStyle(color: Colors.black),
-                  ),
-                  titlePadding: const EdgeInsets.only(bottom: 50.0),
-                ), */
               ),
               new SliverFillRemaining(
                   child: TabBarView(
                 children: [
                   Container(
+                    color: Colors.white,
                     padding: EdgeInsets.only(left: 15, right: 15, top: 10),
                     child: Text(
                       comic.contents,
                       style: TextStyle(fontSize: 11),
                     ),
                   ),
-                  Text("abc"),
+                  ChapterCardList(chapters: comic.chapters),
                 ],
               )),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class ChapterCardList extends StatefulWidget {
+  final List<Chapter> chapters;
+  ChapterCardList({this.chapters});
+
+  @override
+  _ChapterCardListState createState() =>
+      _ChapterCardListState(chapters: chapters);
+}
+
+class _ChapterCardListState extends State<ChapterCardList> {
+  List<Chapter> chapters;
+  _ChapterCardListState({this.chapters});
+
+  @override
+  Widget build(BuildContext context) {
+    return MediaQuery.removePadding(
+      context: context,
+      removeTop: true,
+      child: ListView.builder(
+        itemCount: chapters.length,
+        itemBuilder: (context, index) {
+          return Column(
+            children: [
+              ListTile(
+                onTap: () {},
+                dense: true,
+                title: Text(chapters[index].name),
+                tileColor: Colors.white,
+              ),
+              Divider(
+                height: 1,
+              ),
+            ],
+          );
+        },
       ),
     );
   }
