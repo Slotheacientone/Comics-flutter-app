@@ -1,11 +1,10 @@
-import 'dart:convert';
-
 import 'package:comics_flutter_app/utils/data.dart';
+import 'package:comics_flutter_app/view/category_page.dart';
 import 'package:comics_flutter_app/view/discovery_page.dart';
 import 'package:comics_flutter_app/view/home_page.dart';
 import 'package:comics_flutter_app/view/library_page.dart';
 import 'package:comics_flutter_app/view/profile_page.dart';
-import 'package:comics_flutter_app/view/category_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
