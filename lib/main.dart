@@ -25,8 +25,8 @@ class _AppState extends State<App> {
   List<Widget> _children = [
     HomePage(),
     CategoryPage(),
-    DiscoveryPage(),
-    LibraryPage(),
+    /* DiscoveryPage(),
+    LibraryPage(), */
     ProfilePage(),
   ];
 
@@ -39,7 +39,7 @@ class _AppState extends State<App> {
           index: _currentIndex,
           children: _children,
         ),
-       // body: _children[_currentIndex],
+        // body: _children[_currentIndex],
         bottomNavigationBar: BottomNavigationBar(
           selectedItemColor: Colors.blue,
           unselectedItemColor: Colors.black.withOpacity(0.55),
@@ -55,14 +55,14 @@ class _AppState extends State<App> {
               icon: Icon(Icons.category),
               label: 'Phân loại',
             ),
-            BottomNavigationBarItem(
+            /* BottomNavigationBarItem(
               icon: Icon(Icons.assistant_navigation),
               label: 'Khám phá',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.bookmark),
               label: 'Tủ sách',
-            ),
+            ), */
             BottomNavigationBarItem(
               icon: Icon(Icons.account_circle),
               label: 'Tôi',
