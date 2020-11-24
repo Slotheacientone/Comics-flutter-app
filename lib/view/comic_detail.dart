@@ -114,11 +114,13 @@ class _ChapterCardListState extends State<ChapterCardList> {
         itemBuilder: (context, index) {
           return Column(
             children: [
-              ListTile(
-                onTap: () {},
-                dense: true,
-                title: Text(chapters[index].name),
-                tileColor: Colors.white,
+              InkWell(
+                onTap: (){},
+                child: ListTile(
+                  dense: true,
+                  title: Text(chapters[index].name),
+                  tileColor: Colors.white,
+                ),
               ),
               Divider(
                 height: 1,
