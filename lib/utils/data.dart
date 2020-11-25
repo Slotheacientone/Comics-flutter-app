@@ -29,9 +29,11 @@ class Data {
 
   Data._internal();
 
-  void readData() async {
+
+  Future readData() async {
     String s = await rootBundle.loadString('assets/json/data.json');
-    _comics = (json.decode(s) as List).map((i) => Comic.fromJson(i)).toList();
+    _comics =(json.decode(s) as List).map((i) => Comic.fromJson(i)).toList();
+    print(_comics.length);
     //print(comics);
   }
 
